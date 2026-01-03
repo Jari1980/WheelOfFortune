@@ -1,0 +1,87 @@
+.broccoli-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  font-family: system-ui, sans-serif;
+}
+
+
+.wheel-wrapper {
+  position: relative;
+}
+
+.wheel {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 6px solid #2d6a4f;
+  transition: transform 4s cubic-bezier(0.22, 1, 0.36, 1);
+  background: #ecfdf5;
+}
+
+.slice {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0% 0%;
+  background: #95d5b2;
+}
+
+.slice:nth-child(even) {
+  background: #74c69d;
+}
+
+.slice span {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  transform-origin: center;
+  font-weight: 600;
+  color: #1b4332;
+  white-space: nowrap;
+}
+
+.pointer {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 20px solid #40916c;
+  z-index: 10;
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+}
+
+button {
+  padding: 10px 18px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #2d6a4f;
+  color: white;
+}
+
+button.reset {
+  background: #6c757d;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.stats {
+  text-align: center;
+}
